@@ -1,0 +1,12 @@
+fieldset {
+    padding: 0;
+    margin: 0!important;
+    & legend {
+        text-align: left;
+        background: black;
+        color: white;
+        padding: 8px;
+        border-radius: 8px;
+        margin-left: 16px
+    }
+}
