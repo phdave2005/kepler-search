@@ -23,7 +23,7 @@ export const TEXT_MAP = {
                 oneParameter: 'At least one search parameter must be used!'
             },
             labels: {
-                listContradiction: 'Number(s) in list contradicts other input',
+                anyNumber: 'Must be a number',
                 positiveNumber: 'Need number > 0',
                 positiveNumberList: 'Need all numbers > 0'
             },
@@ -56,7 +56,7 @@ export const TEXT_MAP = {
                 oneParameter: '¡Se debe utilizar al menos un parámetro de búsqueda!'
             },
             labels: {
-                listContradiction: 'Los números en la lista contradicen otras entradas',
+                anyNumber: 'Tiene que ser un número',
                 positiveNumber: 'Necesita número > 0',
                 positiveNumberList: 'Necesita todos los números > 0'
             },
@@ -89,7 +89,7 @@ export const TEXT_MAP = {
                 oneParameter: 'Au moins un paramètre de recherche doit être utilisé!'
             },
             labels: {
-                listContradiction: 'Le(s) numéro(s) dans la liste contredisent les autres entrées',
+                anyNumber: 'Doit être un nombre',
                 positiveNumber: 'Besoin d\'un numéro > 0',
                 positiveNumberList: 'Besoin de tous les nombres > 0'
             },
@@ -122,7 +122,7 @@ export const TEXT_MAP = {
                 oneParameter: 'È necessario utilizzare almeno un parametro di ricerca!'
             },
             labels: {
-                listContradiction: 'I numeri nell\'elenco contraddicono altri input',
+                anyNumber: 'Deve essere un numero',
                 positiveNumber: 'È necessario un numero > 0',
                 positiveNumberList: 'Sono necessari tutti i numeri > 0'
             },

@@ -35,7 +35,7 @@ header, footer {
 	transition: 700ms;
 	cursor: pointer;
 	color: #fff!important;
-	padding-top: 2px
+	margin-top: 2px
 }
 
 .action-container .action-icon:hover, button:hover {

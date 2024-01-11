@@ -237,20 +237,28 @@ class Home extends Component {
             const errorLabels = [];
             if (!!f?.value) {
                 const validations = f.getAttribute("data-validations");
-                let invalid, num;
+                let invalid, j, num, splitList;
                 validations.split(",").forEach((validation) => {
                     switch(validation) {
-                        case 'minCannotExceedMax':
-                            const correspondingMaximumId = f.id.replace(/min/i, 'max');
-                            const maxField = document.getElementById(correspondingMaximumId);
-                            invalid = !!maxField && maxField.value.trim() && (Number(maxField.value) < Number(f.value));
+                        case 'anyNumber':
+                            num = Number(f.value);
+                            invalid = isNaN(num);
                         break;
-                        case 'positiveNumberList':
-                            const splitList = f.value.split(",");
-                            let j;
+                        case 'anyNumberList':
+                            splitList = f.value.split(",");
                             for(j in splitList) {
                                 num = Number(splitList[j]);
-                                if (num <= 0) {
+                                if (isNaN(num)) {
+                                    invalid = true;
+                                    break;
+                                }
+                            }
+                        break;
+                        case 'positiveNumberList':
+                            splitList = f.value.split(",");
+                            for(j in splitList) {
+                                num = Number(splitList[j]);
+                                if (isNaN(num) || num <= 0) {
                                     invalid = true;
                                     break;
                                 }

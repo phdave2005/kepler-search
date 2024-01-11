@@ -17,7 +17,7 @@ export const TEXT_MAP = {
             },
             {
                 id: 3,
-                text: 'Available languages (as of December 2023) are English, Spanish, French, and Italian. This can be changed in <a href="/kepler-stats/settings">Settings</a>.'
+                text: 'Available languages (as of December 2023) are English, Spanish, French, and Italian. This can be changed in Settings.'
             }
         ]
     },
@@ -39,7 +39,7 @@ export const TEXT_MAP = {
             },
             {
                 id: 3,
-                text: 'Los idiomas disponsibles (a diciembre de 2023) son inglés, español, francés, e italiano. Esto se peude cambiar en <a href="/crystal-search/settings">Configuración</a>.'
+                text: 'Los idiomas disponsibles (a diciembre de 2023) son inglés, español, francés, e italiano. Esto se peude cambiar en Configuración.'
             }
         ]
     },
@@ -61,7 +61,7 @@ export const TEXT_MAP = {
             },
             {
                 id: 3,
-                text: 'Les langues disponsibles (à partir décembre 2023) sont l\'anglais, l\'espagnol, le français et l\'italian. Cela peut être modifié dans les <a href="/crystal-search/settings">Paramètres</a>.'
+                text: 'Les langues disponsibles (à partir décembre 2023) sont l\'anglais, l\'espagnol, le français et l\'italian. Cela peut être modifié dans les Paramètres.'
             }
         ]
     },
@@ -83,7 +83,7 @@ export const TEXT_MAP = {
             },
             {
                 id: 3,
-                text: 'Le lingue disponibili (a dicembre 2023) sono inglese, spagnolo, francese e italiano. Questo può essere modificato in <a href="/crystal-search/settings">Impostazioni</a>.'
+                text: 'Le lingue disponibili (a dicembre 2023) sono inglese, spagnolo, francese e italiano. Questo può essere modificato in Impostazioni.'
             }
         ]
     }

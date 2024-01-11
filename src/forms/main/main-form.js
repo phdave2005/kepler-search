@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './main-form.css'
 import '../form.css'
 import LabelElement from '../../elements/label/label-element.js'
+import DISPLAY_PARAMETERS from '../../constants/display-parameters.js'
 import MONGO_DB_OPERATORS from '../../constants/mongo-db-operators.js'
 import TEXT_MAP from './translation-map.js'
 
@@ -66,106 +67,7 @@ function handleNumberChange(e) {
 }
 
 function MainForm(props) {
-	const [ state, setState ] = useState({
-		axisClass: 'disabled',
-		axisType: 'number',
-		axisDoppelgangerClass: 'disabled',
-		axisDoppelgangerType: 'number',
-		axisDoppelgangerAncestorClass: 'DN',
-		axisValidation: 'positiveNumber',
-		axisDoppelgangerValidation: 'positiveNumber',
-		planetaryRadiusClass: 'disabled',
-		planetaryRadiusType: 'number',
-		planetaryRadiusDoppelgangerClass: 'disabled',
-		planetaryRadiusDoppelgangerType: 'number',
-		planetaryRadiusDoppelgangerAncestorClass: 'DN',
-		planetaryRadiusValidation: 'positiveNumber',
-		planetaryRadiusDoppelgangerValidation: 'positiveNumber',
-		stellarRadiusClass: 'disabled',
-		stellarRadiusType: 'number',
-		stellarRadiusDoppelgangerClass: 'disabled',
-		stellarRadiusDoppelgangerType: 'number',
-		stellarRadiusDoppelgangerAncestorClass: 'DN',
-		stellarRadiusValidation: 'positiveNumber',
-		stellarRadiusDoppelgangerValidation: 'positiveNumber',
-		hostStarTemperatureClass: 'disabled',
-		hostStarTemperatureType: 'number',
-		hostStarTemperatureDoppelgangerClass: 'disabled',
-		hostStarTemperatureDoppelgangerType: 'number',
-		hostStarTemperatureDoppelgangerAncestorClass: 'DN',
-		hostStarTemperatureValidation: 'positiveNumber',
-		hostStarTemperatureDoppelgangerValidation: 'positiveNumber',
-		planetTemperatureClass: 'disabled',
-		planetTemperatureType: 'number',
-		planetTemperatureDoppelgangerClass: 'disabled',
-		planetTemperatureDoppelgangerType: 'number',
-		planetTemperatureDoppelgangerAncestorClass: 'DN',
-		planetTemperatureValidation: 'positiveNumber',
-		planetTemperatureDoppelgangerValidation: 'positiveNumber',
-		keplerMagnitudeClass: 'disabled',
-		keplerMagnitudeType: 'number',
-		keplerMagnitudeDoppelgangerClass: 'disabled',
-		keplerMagnitudeDoppelgangerType: 'number',
-		keplerMagnitudeDoppelgangerAncestorClass: 'DN',
-		keplerMagnitudeValidation: 'positiveNumber',
-		keplerMagnitudeDoppelgangerValidation: 'positiveNumber',
-		transitCenterTimeClass: 'disabled',
-		transitCenterTimeType: 'number',
-		transitCenterTimeDoppelgangerClass: 'disabled',
-		transitCenterTimeDoppelgangerType: 'number',
-		transitCenterTimeDoppelgangerAncestorClass: 'DN',
-		transitCenterTimeValidation: 'positiveNumber',
-		transitCenterTimeDoppelgangerValidation: 'positiveNumber',
-		transitCenterTimeUncertaintyClass: 'disabled',
-		transitCenterTimeUncertaintyType: 'number',
-		transitCenterTimeUncertaintyDoppelgangerClass: 'disabled',
-		transitCenterTimeUncertaintyDoppelgangerType: 'number',
-		transitCenterTimeUncertaintyDoppelgangerAncestorClass: 'DN',
-		transitCenterTimeUncertaintyValidation: 'positiveNumber',
-		transitCenterTimeUncertaintyDoppelgangerValidation: 'positiveNumber',
-		periodClass: 'disabled',
-		periodType: 'number',
-		periodDoppelgangerClass: 'disabled',
-		periodDoppelgangerType: 'number',
-		periodDoppelgangerAncestorClass: 'DN',
-		periodValidation: 'positiveNumber',
-		periodDoppelgangerValidation: 'positiveNumber',
-		periodUncertaintyClass: 'disabled',
-		periodUncertaintyType: 'number',
-		periodUncertaintyDoppelgangerClass: 'disabled',
-		periodUncertaintyDoppelgangerType: 'number',
-		periodUncertaintyDoppelgangerAncestorClass: 'DN',
-		periodUncertaintyValidation: 'positiveNumber',
-		periodUncertaintyDoppelgangerValidation: 'positiveNumber',
-		declinationClass: 'disabled',
-		declinationType: 'number',
-		declinationDoppelgangerClass: 'disabled',
-		declinationDoppelgangerType: 'number',
-		declinationDoppelgangerAncestorClass: 'DN',
-		declinationValidation: 'positiveNumber',
-		declinationDoppelgangerValidation: 'positiveNumber',
-		rightAscensionClass: 'disabled',
-		rightAscensionType: 'number',
-		rightAscensionDoppelgangerClass: 'disabled',
-		rightAscensionDoppelgangerType: 'number',
-		rightAscensionDoppelgangerAncestorClass: 'DN',
-		rightAscensionValidation: 'positiveNumber',
-		rightAscensionDoppelgangerValidation: 'positiveNumber',
-		stellarMassClass: 'disabled',
-		stellarMassType: 'number',
-		stellarMassDoppelgangerClass: 'disabled',
-		stellarMassDoppelgangerType: 'number',
-		stellarMassDoppelgangerAncestorClass: 'DN',
-		stellarMassValidation: 'positiveNumber',
-		stellarMassDoppelgangerValidation: 'positiveNumber',
-		objectOfInterestClass: 'disabled',
-		objectOfInterestType: 'number',
-		objectOfInterestDoppelgangerClass: 'disabled',
-		objectOfInterestDoppelgangerType: 'number',
-		objectOfInterestDoppelgangerAncestorClass: 'DN',
-		objectOfInterestValidation: 'positiveNumber',
-		objectOfInterestDoppelgangerValidation: 'positiveNumber'
-	});
+	const [ state, setState ] = useState(DISPLAY_PARAMETERS);
     const textUsed = TEXT_MAP[props.language];
     return (
         <section id="main-section" className={props.class} data-testid="main">
@@ -555,7 +457,7 @@ function MainForm(props) {
 									periodClass: (!!e.target.value ? '' : 'disabled'),
 									periodDoppelgangerAncestorClass: ((!!e.target.value && (e.target.value !== 'eq')) ? '' : 'DN'),
 									periodType: ((!!e.target.value && e.target.value.match(/^(in|nin)$/)) ? 'text' : 'number'),
-									periodValidation: ((!!e.target.value && e.target.value.match(/^(in|nin)$/)) ? 'positiveNumberList' : 'positiveNumber')
+									periodValidation: ((!!e.target.value && e.target.value.match(/^(in|nin)$/)) ? 'anyNumberList' : 'anyNumber')
 								});
 								processChange(e);
 							}
@@ -566,7 +468,7 @@ function MainForm(props) {
 						<LabelElement labelFor={'mongo-operator-9'} language={props.language} text={textUsed.labels.mongoOperator.default} />
 					</div>
 					<div className={'flex-field half ' + state.periodClass}>
-						<input id="period" className="field" type={state.periodType} min="0" step="any" data-validations={state.periodValidation} data-search-category="payload" onKeyUp={handleNumberChange} />
+						<input id="period" className="field" type={state.periodType} data-validations={state.periodValidation} data-search-category="payload" onKeyUp={handleNumberChange} />
 						<LabelElement labelFor={'period'} text={textUsed.labels.period.label} tooltip={false} />
 					</div>
 				</div>
@@ -577,7 +479,7 @@ function MainForm(props) {
 									...state,
 									periodDoppelgangerClass: (!!e.target.value ? '' : 'disabled'),
 									periodDoppelgangerType: ((!!e.target.value && e.target.value.match(/^(in|nin)$/)) ? 'text' : 'number'),
-									periodDoppelgangerValidation: ((!!e.target.value && e.target.value.match(/^(in|nin)$/)) ? 'positiveNumberList' : 'positiveNumber')
+									periodDoppelgangerValidation: ((!!e.target.value && e.target.value.match(/^(in|nin)$/)) ? 'anyNumberList' : 'anyNumber')
 								});
 							}
 						}>
@@ -587,7 +489,7 @@ function MainForm(props) {
 						<LabelElement labelFor={'mongo-operator-9-doppelganger'} language={props.language} text={textUsed.labels.mongoOperator.doppelganger} />
 					</div>
 					<div className={'flex-field half ' + state.periodDoppelgangerClass}>
-						<input id="period-doppelganger" className="field" type={state.periodDoppelgangerType} min="0" step="any" data-validations={state.periodDoppelgangerValidation} data-search-category="payload" onKeyUp={handleNumberChange} />
+						<input id="period-doppelganger" className="field" type={state.periodDoppelgangerType}  data-validations={state.periodDoppelgangerValidation} data-search-category="payload" onKeyUp={handleNumberChange} />
 						<LabelElement labelFor={'period-doppelganger'} text={textUsed.labels.period.label} tooltip={false} />
 					</div>
 				</div>
