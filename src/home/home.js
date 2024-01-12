@@ -12,7 +12,7 @@ import TEXT_MAP from './translation-map.js'
 class Home extends Component {
     constructor(props) {
         super(props);
-        this.keplerPath = 'http://asterank.com/api/kepler';
+        this.keplerPath = 'https://asterank.com/api/kepler';
         this.corsDomain = 'https://corsproxy.io';
         this.language = window?.localStorage?.getItem("language-used") || 'en';
         this.textUsed = TEXT_MAP[this.language];
