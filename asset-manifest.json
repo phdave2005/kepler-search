@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/kepler-stats/static/css/main.a6ee206c.css",
-    "main.js": "/kepler-stats/static/js/main.a60686ba.js",
+    "main.js": "/kepler-stats/static/js/main.39ce2cbf.js",
     "static/js/984.b0cc7a47.chunk.js": "/kepler-stats/static/js/984.b0cc7a47.chunk.js",
     "static/js/787.ca4b81d2.chunk.js": "/kepler-stats/static/js/787.ca4b81d2.chunk.js",
     "static/media/dvp_photo.jpg": "/kepler-stats/static/media/dvp_photo.4776192146753282167c.jpg",
     "static/media/processing.svg": "/kepler-stats/static/media/processing.98bb64fc57f579f6a3a0c8ac451ce5b0.svg",
     "index.html": "/kepler-stats/index.html",
     "main.a6ee206c.css.map": "/kepler-stats/static/css/main.a6ee206c.css.map",
-    "main.a60686ba.js.map": "/kepler-stats/static/js/main.a60686ba.js.map",
+    "main.39ce2cbf.js.map": "/kepler-stats/static/js/main.39ce2cbf.js.map",
     "984.b0cc7a47.chunk.js.map": "/kepler-stats/static/js/984.b0cc7a47.chunk.js.map",
     "787.ca4b81d2.chunk.js.map": "/kepler-stats/static/js/787.ca4b81d2.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a6ee206c.css",
-    "static/js/main.a60686ba.js"
+    "static/js/main.39ce2cbf.js"
   ]
 }
