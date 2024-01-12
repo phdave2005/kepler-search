@@ -1,5 +1,12 @@
 export const TEXT_MAP = {
     en: {
+        chart: {
+            title: 'Kepler Objects of Interest (KOI)',
+            xLabels: [
+                'KOI Search Hits',
+                'Earth-Like KOI'
+            ]
+        },
         heading: {
             main: 'Parameters',
             filters: 'Filters'
@@ -33,6 +40,13 @@ export const TEXT_MAP = {
         }
     },
     es: {
+        chart: {
+            title: 'Objetos de interés de Kepler (KOI)',
+            xLabels: [
+                'Resultados de búsqueda de KOI',
+                'KOI parecido a la Tierra'
+            ]
+        },
         heading: {
             main: 'Parámetros',
             filters: 'Filtros'
@@ -66,6 +80,13 @@ export const TEXT_MAP = {
         }
     },
     fr: {
+        chart: {
+            title: 'Objets d\'intérêt Kepler (KOI)',
+            xLabels: [
+                'Résultats de recherche KOI',
+                'KOI semblable à la Terre'
+            ]
+        },
         heading: {
             main: 'Paramètres',
             filters: 'Filtres'
@@ -99,6 +120,13 @@ export const TEXT_MAP = {
         }
     },
     it: {
+        chart: {
+            title: 'Oggetti di interesse di Keplero (KOI)',
+            xLabels: [
+                'Risultati ricerca KOI',
+                'KOI simili alla Terra'
+            ]
+        },
         heading: {
             main: 'Parametri',
             filters: 'Filtri'

@@ -134,12 +134,20 @@ h1 {
   	margin-right: 4px!important
 }
 
+.MT16 {
+	margin-top: 16px!important
+}
+
 .MT32 {
   	margin-top: 32px!important
 }
 
 .MT40 {
   	margin-top: 40px!important
+}
+
+.MT64 {
+	margin-top: 64px!important
 }
 
 .P0 {

@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
+import CanvasJS from '@canvasjs/charts';
 import axios from 'axios'
-import './home.css'
+import { faArrowsRotate, faGlobe, faFilter, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import './home.css'
 import MainForm from '../forms/main/main-form.js'
 import FiltersForm from '../forms/filters/filters-form.js'
-import { faArrowsRotate, faGlobe, faFilter, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import processing from './processing.svg'
 import TEXT_MAP from './translation-map.js'
 
@@ -17,6 +18,7 @@ class Home extends Component {
         this.textUsed = TEXT_MAP[this.language];
         this.state = {
             forms: {
+                cl: '',
                 active: 'main',
                 sections: {
                     main: {
@@ -38,6 +40,9 @@ class Home extends Component {
                         text: null
                     }
                 }
+            },
+            stats: {
+                cl: 'DN'
             }
         };
     }
@@ -189,11 +194,7 @@ class Home extends Component {
     }
 
     processResponse(data) {
-        if (1==2) {
-            //stats
-        } else {
-            this.downloadData(data);
-        }
+        this.downloadData(data);
     }
 
     downloadData(data) {
@@ -206,6 +207,11 @@ class Home extends Component {
         downloadLink.setAttribute("href", URL.createObjectURL(blob));
         downloadLink.setAttribute("download", "data_" + date.toISOString().split("T")[0] + "-" + date.getTime() + ".json");
         downloadLink.click();
+        this.setState({
+            stats: {
+                cl: 'MT64'
+            }
+        });
         setTimeout(() => {
             this.setState(state => (state.forms.validation = {
                 error: {
@@ -217,6 +223,7 @@ class Home extends Component {
                     text: null
                 }
             }, state));
+            this.renderStats(data);
             setTimeout(() => {
                 this.setState(state => (state.forms.validation = {
                     error: {
@@ -229,7 +236,32 @@ class Home extends Component {
                     }
                 }, state));
             }, 6000);
-        }, 1500);
+        }, 500);
+    }
+
+    renderStats(data) {
+        let chart = new CanvasJS.Chart("chart-container", {
+            title:{
+                text: this.textUsed.chart.title
+            },
+            data: [{
+                type: "column",
+                dataPoints: [
+                    { label: this.textUsed.chart.xLabels[0],  y: data.length  },
+                    { label: this.textUsed.chart.xLabels[1], y: this.getEarthLikeMatches(data)  }
+                ]
+            }]
+        });
+        this.setState({
+            stats: {
+                cl: 'MT32'
+            }
+        });
+        chart.render();
+    }
+
+    getEarthLikeMatches(data) {
+        return data.filter(d => (d.T0 >= 223 && d.T0 <= 308)).length;
     }
 
     invalidateFormActiveSection = () => {
@@ -393,6 +425,11 @@ class Home extends Component {
                     }
                 }
                 form.reset();
+                this.setState({
+                    stats: {
+                        cl: 'DN'
+                    }
+                });
             }
         }
         const buttonParameters = [
@@ -423,13 +460,14 @@ class Home extends Component {
                     </div>
                     <div id="main-grid-view">
                         <p className={"dialog " + this.state.forms.validation.error.cl} data-identifier="info">{this.state.forms.validation.error.text}</p>
+                        <div id="chart-container" className={this.state.stats.cl}></div>
                         <div id="processing-container" className={this.state.forms.validation.processing.cl}>
                             <div>
                                 <img className="scale-2" src={processing} alt="processing" data-testid="processing" />
                             </div>
                             <p>{this.textUsed.processing.text}</p>
                         </div>
-                        <form id="parameters-form" data-testid="form" onSubmit={this.processFormSubmission}>
+                        <form id="parameters-form" className={this.state.stats.cl.match(/DN/i) ? '' : 'DN'} data-testid="form" onSubmit={this.processFormSubmission}>
                             <h2 className="form-heading">{this.state.forms.sections[this.state.forms.active].heading}</h2>
                             <MainForm class={this.state.forms.sections.main.show ? 'active' : 'DN'} language={this.language} />
                             <FiltersForm class={this.state.forms.sections.filters.show ? 'active' : 'DN'} language={this.language} />
